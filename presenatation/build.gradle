@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "by.pzz.erizo.pzz"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':data')
+    def dependency = rootProject.ext.dependencies
+    implementation dependency.supportAppcompat
+    implementation dependency.supportV4
+    implementation dependency.supportDesign
+    implementation dependency.rxAndroid
+    implementation dependency.constraintLayout
+    implementation dependency.archComponentsExtention
+    implementation dependency.glide
+    annotationProcessor dependency.archComponentCompiler
+    implementation dependency.dagger
+    annotationProcessor dependency.daggerCompiler
+    implementation dependency.cardView
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
+    api project(path: ':domain')
+}
