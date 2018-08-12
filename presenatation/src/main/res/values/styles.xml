@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="PzzTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/RegularTextViewFont</item>
+        <item name="android:fontFamily">@font/malina</item>
+    </style>
+
+    <style name="PzzTheme.Launcher" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="RegularTextViewFont" parent="android:Widget.TextView">
+        <item name="android:fontFamily">malina.ttf</item>
+    </style>
+
+
+
 </resources>
